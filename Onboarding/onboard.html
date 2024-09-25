@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onboarding Page</title>
+  <link rel="stylesheet" href="onboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <div class="nav-bar">
+    <div class="nav-left">
+      <img src="/Smarty_logo-Dark Moss-02.png" alt="Logo" class="logo">
+      <span class="section-title-chevron"> > </span>
+      <span class="section-title"> Onboarding Station</span>
+    </div>
+    <div class="nav-right">
+      <div class="progress-container">
+        <div class="progress-text" id="top-progress-text">0% Complete</div>
+        <div class="progress-bar">
+          <div class="status" id="top-progress-bar"></div>
+        </div>
+      </div>
+      <div class="saved-indicator">Saved</div>
+      <a href="#" class="help-button">Exit</a>
+    </div>
+  </div>
+  <div class="progress-roadmap">
+    <div class="progress-line" id="progress-line"></div>
+    <ul class="progress-list" id="sidebar-progress">
+      <li class="current">
+        <a href="#" onclick="jumpToSection(1)"><div class="circle">1</div><span>Information</span></a>
+      </li>
+      <li>
+        <a href="#" onclick="jumpToSection(2)"><div class="circle">2</div><span>Company</span></a>
+      </li>
+      <li>
+        <a href="#" onclick="jumpToSection(3)"><div class="circle">3</div><span>Next section</span></a>
+      </li>
+      <li>
+        <a href="#" onclick="jumpToSection(4)"><div class="circle">4</div><span>Benefits</span></a>
+      </li>
+      <li>
+        <a href="#" onclick="jumpToSection(5)"><div class="circle">5</div><span>Next section #</span></a>
+      </li>
+      <li>
+        <a href="#" onclick="jumpToSection(6)"><div class="circle">6</div><span>Next section ##</span></a>
+      </li>
+      <li>
+        <a href="#" onclick="jumpToSection(7)"><div class="circle">7</div><span>Sign Forms##</span></a>
+      </li>
+      <li>
+        <a href="#" onclick="jumpToSection(7)"><div class="circle">7</div><span>Finished </span></a>
+      </li>
+    </ul>
+  </div>
+  
+  
+  <!-- Main Form Sections -->
+  <div class="main-content">
+    <form id="onboarding-form">
+      <!-- Section 1 -->
+      <div class="section" id="section1">
+        <h2>Information</h2>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required>
+        <button type="button" onclick="nextSection(1)">Next</button>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="section" id="section2">
+        <h2>Company</h2>
+        <label for="Company">Number of Company</label>
+        <input type="number" id="Company" required>
+        <button type="button" onclick="nextSection(2)">Next</button>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="section" id="section3">
+        <h2>Next section</h2>
+        <label for="Next section">Next section ID</label>
+        <input type="text" id="Next section" required>
+        <button type="button" onclick="nextSection(3)">Next</button>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="section" id="section4">
+        <h2>Benefits</h2>
+        <label for="plan">Choose Plan</label>
+        <select id="plan">
+          <option value="silver">Silver Plan</option>
+          <option value="gold">Gold Plan</option>
+        </select>
+        <button type="button" onclick="nextSection(4)">Next</button>
+      </div>
+
+      <!-- Section 5 -->
+      <div class="section" id="section5">
+        <h2>Next section #</h2>
+        <p>Select your Next section # options.</p>
+        <button type="button" onclick="nextSection(5)">Next</button>
+      </div>
+
+      <!-- Section 6 -->
+      <div class="section" id="section6">
+        <h2>Next section ##</h2>
+        <p>Enter your Next section ## information.</p>
+        <button type="button" onclick="nextSection(6)">Next</button>
+      </div>
+
+      <!-- Section 7 -->
+      <div class="section" id="section7">
+        <h2>Sign Forms##</h2>
+        <p>Please sign the necessary forms.</p>
+        <button type="button" onclick="nextSection(7)">Submit</button>
+      </div>
+      <div class="section" id="section8">
+        <h2>You've Finnished</h2>
+        <button type="button" onclick="nextSection(7)">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="onboard.js"></script>
+</body>
+</html>

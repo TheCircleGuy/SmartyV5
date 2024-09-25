@@ -1,0 +1,239 @@
+/* General styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #ffffff;
+  }
+  
+  /* Top navigation bar */
+  .nav-bar {
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 15px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 1000;
+  }
+  
+  .nav-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 30px;
+    margin-right: 15px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(70, 70, 70);
+  }
+
+  .section-title-chevron {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 1rem;
+    color: rgb(142, 142, 142);
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    padding-right: 5rem;
+  }
+  
+  .progress-container {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+  }
+  
+  .progress-text {
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  
+  .progress-bar {
+    width: 150px;
+    background-color: #e0e0e0;
+    height: 8px;
+    border-radius: 4px;
+    position: relative;
+  }
+  
+  .status {
+    width: 0;
+    background-color: rgb(83, 245, 83);
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease-in-out;
+  }
+  
+  .saved-indicator {
+    color: rgb(83, 245, 83);
+    font-weight: bold;
+    margin-right: 15px;
+  }
+  
+  .help-button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .help-button:hover {
+    background-color: #0056b3;
+  }
+  /* Sidebar container */
+.progress-roadmap {
+    position: relative;
+    width: 15%;
+    padding-top: 1rem;
+    background-color: #fff;
+    height: 100vh;
+    padding-left: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 5rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 12px 0px;
+  }
+  
+  /* Progress list container */
+  .progress-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 1; /* Ensure the list is above the line */
+  }
+  
+  /* Vertical progress line (gray by default) */
+  .progress-line {
+    position: absolute;
+    top: 1rem; /* Adjust position for 1rem padding */
+    left: 18px; /* Align with circles */
+    width: 4px;
+    height: 100%;
+    background-color: #e0e0e0; /* Gray background for the entire line */
+    z-index: 0; /* Behind the list items */
+  }
+  
+  /* Each list item (step) */
+  .progress-list li {
+    display: flex; /* Use flexbox to align circle and title side by side */
+    align-items: center; /* Vertically center the circle and title */
+    justify-content: flex-start; /* Align everything to the left */
+    position: relative;
+    margin-bottom: 20px;
+    z-index: 1; /* Ensure the circles are above the line */
+  }
+  .progress-list li a {
+    text-decoration: none;
+    color: inherit; /* Ensures the link takes the color from its parent */
+  }
+  .progress-list li span {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none; /* Remove underline from the title */
+  }
+  
+  /* Circle styling */
+  .circle {
+    height: 24px;
+    width: 24px;
+    padding: 5px;
+    border: 2px solid #e0e0e0; /* Gray border for unfinished steps */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #999;
+    margin-right: 15px; /* Add space between circle and title */
+    background-color: white;
+    transition: all 0.3s ease;
+    font-weight: bold;
+  }
+  
+  /* Step title */
+  .progress-list li span {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Completed steps */
+  .progress-list li.completed .circle {
+    background-color: #d4f5d4; /* Light green background for completed steps */
+    color: #28a745; /* Darker green for text */
+    border-color: #28a745; /* Green border */
+  }
+  
+  .progress-list li.completed span {
+    color: #28a745; /* Make the text green for completed steps */
+  }
+  
+  /* Circle for the current step */
+  .progress-list li.current .circle {
+    background-color: white;
+    color: #28a745; /* Darker green for current step text */
+    border-color: #28a745; /* Green border */
+  }
+  
+  /* Gray circles for future steps */
+  .progress-list li .circle {
+    background-color: white; /* White background for future steps */
+    color: #999; /* Gray text */
+    border-color: #e0e0e0; /* Gray border for future steps */
+  }
+  
+  /* Main content */
+  .main-content {
+    margin-left: 22%;
+    padding: 80px 20px;
+    width: 70%;
+  }
+  
+  .section {
+    display: none;
+  }
+  
+  .section.active {
+    display: block;
+  }
+  
+  input, select {
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
