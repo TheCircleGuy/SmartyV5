@@ -692,12 +692,13 @@ figure {
   .symmetrical-section {
     display: flex;
     justify-content: space-between;
-    padding: 0 0px; /* Adjust padding to be equal to industry problem section */
+    padding: 0 50px; /* Padding similar to other sections */
     gap: 20px;
-    align-items: start;
-    max-width: 1200px; /* Set a max width */
+    align-items: center; /* Centers children vertically */
+    max-width: 1200px;
     margin: 0 auto; /* Center the section */
 }
+
 .section-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 36px;
@@ -712,11 +713,30 @@ figure {
 .symmetrical-section {
     display: flex;
     justify-content: space-between;
-    padding: 0 50px; /* Padding similar to other sections */
+    padding: 0 50px; /* Adjusted padding */
     gap: 20px;
-    align-items: flex-start;
+    align-items: center; /* Ensures vertical center alignment */
     max-width: 1200px;
-    margin: 0 auto; /* Center the section */
+    margin: 0 auto; /* Center the section horizontally */
+}
+
+/* Ensures that both halves take equal space and align correctly */
+.left-half, .right-half {
+    flex: 1; /* Each half takes up equal space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically within each half */
+}
+
+@media (max-width: 768px) {
+    .symmetrical-section {
+        flex-direction: column; /* Changes layout to vertical on small screens */
+        align-items: stretch; /* Aligns items to stretch to container width */
+    }
+
+    .left-half, .right-half {
+        width: 100%; /* Full width for a clearer stacked layout */
+    }
 }
 
 /* Title Styling */
@@ -882,17 +902,18 @@ figure {
     .symmetrical-section {
         flex-direction: column; /* Stack the two halves */
         padding: 25px; /* Adjust padding for smaller screens */
+        align-items: stretch; /* Full width children in column layout */
     }
 
     .left-half, .right-half {
         padding: 0; /* Remove extra padding */
+        width: 100%; /* Full width for stacked layout */
     }
 
     .boxes-container {
         grid-template-columns: 1fr; /* Make boxes full width on smaller screens */
     }
 }
-
 @media (max-width: 500px) {
     .section-title {
         font-size: 28px; /* Reduce title size on very small screens */
