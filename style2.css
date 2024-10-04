@@ -1,0 +1,962 @@
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 1rem;
+    height: 5rem;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    z-index: 1000; /* Ensure navbar is always on top */
+}
+
+.logo {
+    max-height: 80%;
+    padding-left: 10rem;
+}
+.cta-button-primary-menu, .cta-button-secondary {
+    padding: 15px 30px;
+    max-height: 50%;
+    font-size: 16px;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+.cta-button-primary-menu {
+    background-color: #54BF9F;
+    color: #fff;
+}
+
+.cta-button-primary-menu:hover {
+    background-color: #adf0db;
+}
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0 1rem;
+}
+
+.nav-list a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: green;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 4px;
+    width: 25px;
+    background-color: white;
+    margin: 2px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+/* Default layout for larger screens */
+.landing-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background-color: #fff;
+    flex-wrap: wrap;
+}
+
+.content-left {
+    flex: 1;
+    padding-left: 5rem;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #000;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #555;
+}
+
+.cta-button-primary {
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: #54BF9F;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.cta-button-primary:hover {
+    background-color: #98d7c3;
+}
+
+.content-right-top {
+    flex: 1;
+    text-align: center;
+}
+
+.image-right-top {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Responsive layout for screens below 700px */
+@media (max-width: 700px) {
+    .landing-section {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+        justify-content: center;
+        align-items: center; /* Ensures everything is horizontally centered */
+    }
+
+    .content-left {
+        margin-bottom: 20px; /* Adds spacing below the button */
+        text-align: center;  /* Ensure text aligns centrally */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers content horizontally */
+    }
+
+    .title {
+        font-size: 36px; /* Reduces font size for smaller screens */
+        text-align: center; /* Ensure title is centered */
+    }
+
+    .subtitle {
+        text-align: center; /* Ensure subtitle is centered */
+        margin-bottom: 15px; /* Add some space below the subtitle */
+    }
+
+    .cta-button-primary {
+        font-size: 14px;
+        padding: 12px 25px;
+        text-align: center; /* Ensure button text is centered */
+        margin: 15px 0; /* Add margin to space out button */
+    }
+
+    .content-right-top {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Ensure image aligns centrally */
+        margin-top: 20px; /* Adds spacing above the phone image */
+    }
+
+    .image-right-top {
+        margin: 0 auto; /* Centers the image */
+        max-width: 80%; /* Adjust size for smaller screens */
+        display: block; /* Ensure it behaves as a block element */
+    }
+}
+
+/* Box section in horizontal row, same-size boxes */
+.box-section {
+    display: flex;
+    justify-content: space-between;
+    padding:  100px;
+    gap: 20px;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 2s ease, transform 2s ease;
+    top: 1000;
+}
+.box-section.scroll-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.col_fourth {
+    flex: 1;
+    min-width: 22%;
+    min-height: 250px;
+    background-color: #2d945b;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.at-icon-box-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.at-icon-box-text h4 {
+    font-size: 64px;
+    margin: 0 0 10px 0;
+}
+
+.at-icon-box-text p {
+    font-size: 22px;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+
+.at-icon-box-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 950px) {
+    .box-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
+        grid-gap: 20px;
+        padding: 20px;
+    }
+
+    .col_fourth {
+        min-width: 100%;
+        min-height: 200px;
+        border-radius: 15px;
+        padding: 30px;
+    }
+
+    .at-icon-box-icon {
+        display: none; /* Hide icons on smaller screens */
+    }
+
+    .at-icon-box-text h4 {
+        font-size: 64px;
+    }
+
+    .at-icon-box-text p {
+        font-size: 18px;
+    }
+}
+
+/* New Section for Header and Subtitle */
+.skills-section {
+    text-align: center;
+    /* margin: 60px 0; */
+    padding: 0 20px;
+    padding-bottom: 10rem;
+}
+
+.skills-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.skills-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.cta-button-primary, .cta-button-secondary {
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+.cta-button-primary {
+    background-color: #54BF9F;
+    color: #fff;
+}
+
+.cta-button-primary:hover {
+    background-color: #b8f5e2;
+}
+
+.cta-button-secondary {
+    background-color: #fff;
+    color: #54BF9F;
+    border: 2px solid #54BF9F;
+}
+
+.cta-button-secondary:hover {
+    background-color: #f8f9fa;
+}
+
+.cta-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.cta-icon-item {
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+.cta-icon-item i {
+    color: #84ffc4;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.cta-icon-item span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+/* Video Section Styling */
+.video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+/* Video Card (Container) */
+.video-card {
+    background-color: #fff;
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Video Frame Styling */
+.video-frame {
+    width: 100%;
+    aspect-ratio: 4 / 2;
+    border-radius: 10px;
+    border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-right {
+        display: none; /* Hide the picture on smaller screens */
+    }
+}
+
+/* General Styles for the Section */
+.industry-problems-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.industry-problems-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: #2d945b; /* Green color */
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+/* Container for text and image */
+.text-image-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensures image matches text height */
+    width: 94%;
+    padding: 0 50px;
+}
+
+/* Left Content (Text) */
+.content-left {
+    flex: 1;
+    max-width: 33.33%; /* Takes 1/3 of the space */
+    margin-top: 30px;
+}
+
+.text-item {
+    margin-bottom: 65px;
+    position: relative;
+    text-align: left;
+}
+
+.text-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    position: relative;
+    padding-left: 20px;
+    transition: color 0.3s ease-in-out;
+    text-align: left;
+}
+
+.text-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: transparent; /* Default state */
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Show vertical line only on hover */
+.text-item:hover .text-title::before {
+    background-color: #54BF9F; /* Line color */
+    max-height: 200px;
+}
+
+
+.text-subtitle {
+    max-width: 80%;
+    padding-left: 25px;
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* Right Content (Image) */
+.content-right {
+    flex: 2;
+    max-width: 70%; /* Takes 2/3 of the space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-right {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image scales properly within the space */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: black;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .text-image-box {
+        flex-direction: column; /* Stack text and image vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .content-left, .content-right {
+        max-width: 100%; /* Full width for both text and image */
+    }
+
+    .content-left {
+        padding-right: 5rem;
+    }
+
+    .content-right {
+        margin-top: 20px;
+        display: none;
+    }
+
+    .image-right {
+        width: 100%;
+        height: auto;
+        margin-top: 20px; /* Add some spacing between text and image */
+    }
+}
+
+
+/* Section Styling */
+.reach-connection-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.section-main-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: #2d945b; /* Green color */
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.section-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* Form Section Styling */
+.form-section {
+    margin-top: 10rem;
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #2d945b;
+}
+
+.form-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.form-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d945b;
+    margin-bottom: 30px;
+}
+
+/* Form Styling */
+.contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between inputs */
+}
+
+.form-input {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #54BF9F;
+    border-radius: 5px;
+    width: 250px;
+    max-width: 100%;
+}
+
+.form-input::placeholder {
+    color: #aaa;
+}
+
+.form-submit {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #54BF9F;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-submit:hover {
+    background-color: #12a174;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form {
+        flex-direction: column;
+    }
+
+    .form-input, .form-submit {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+figure {
+    text-align: center;
+  }
+  
+  figure svg {
+    margin: 3em auto 0;
+    width: 80vw;
+  }
+  
+  .waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px; /*Fix for safari gap*/
+    min-height: 100px;
+    max-height: 150px;
+  }
+
+  
+/* Animation */
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+  }
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+  @keyframes move-forever {
+    0% {
+      transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+      transform: translate3d(85px, 0, 0);
+    }
+  }
+
+
+  /* Title Styling */
+
+
+  .symmetrical-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px; /* Padding similar to other sections */
+    gap: 20px;
+    align-items: center; /* Centers children vertically */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the section */
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: #2d945b;
+    text-align: center;
+    margin-bottom: 5rem; /* Adds space below the title */
+    padding-top: 5rem;
+}
+/* Why Smarty Section */
+
+.symmetrical-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px; /* Adjusted padding */
+    gap: 20px;
+    align-items: center; /* Ensures vertical center alignment */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the section horizontally */
+}
+
+/* Ensures that both halves take equal space and align correctly */
+.left-half, .right-half {
+    flex: 1; /* Each half takes up equal space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically within each half */
+}
+
+@media (max-width: 768px) {
+    .symmetrical-section {
+        flex-direction: column; /* Changes layout to vertical on small screens */
+        align-items: stretch; /* Aligns items to stretch to container width */
+    }
+
+    .left-half, .right-half {
+        width: 100%; /* Full width for a clearer stacked layout */
+    }
+}
+
+/* Title Styling */
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: #2d945b;
+    text-align: center;
+    margin-bottom: 5rem; /* Adds space below the title */
+    padding-top: 5rem;
+}
+
+/* Left Half: Text Styling */
+.left-half {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.left-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    margin-left: 1.5rem;
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between text items */
+}
+
+.text-item {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.text-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.text-subtitle {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    padding-right: 5rem;
+    background: black;
+}
+
+.text-point2 {
+    font-size: 18px;
+    color: #555;
+    margin-left: 20px;
+    position: relative;
+    margin-bottom: 2.5rem;
+    /* line-height: 2; */
+}
+
+
+.text-point {
+    font-size: 18px;
+    color: #555;
+    margin-left: 20px;
+    position: relative;
+    line-height: 2;
+    /* padding-left: 2rem; */
+}
+
+.issue-icon {
+    width: 4% ;/* Adjust the size as needed */
+    height: auto;
+    margin-right: 10px; /* Space between the icon and text */
+    vertical-align: middle; /* Align the image with the text */
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 4px; */
+}
+
+.text-point::before {
+    padding-left: 1rem;
+    /* content: "❌"; */
+    color: #2d945b; /* Green bullet color */
+    position: absolute;
+    /* left: -20px; */
+}
+
+.icon-cross {
+    color: red;
+    margin-right: 10px;
+}
+
+/* Right Half: Boxes Styling */
+.right-half {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.right-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+
+}
+
+.boxes-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.info-box {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+    height: 150px; /* Square boxes */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-box:hover {
+    transform: translateY(-5px); /* Subtle hover effect */
+}
+
+.info-box h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.learn-more {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design for "Why Smarty?" Section */
+@media (max-width: 768px) {
+    .symmetrical-section {
+        flex-direction: column; /* Stack the two halves */
+        padding: 25px; /* Adjust padding for smaller screens */
+        align-items: stretch; /* Full width children in column layout */
+    }
+
+    .left-half, .right-half {
+        padding: 0; /* Remove extra padding */
+        width: 100%; /* Full width for stacked layout */
+    }
+
+    .boxes-container {
+        grid-template-columns: 1fr; /* Make boxes full width on smaller screens */
+    }
+}
+@media (max-width: 500px) {
+    .section-title {
+        font-size: 28px; /* Reduce title size on very small screens */
+    }
+
+    .text-title {
+        font-size: 18px; /* Smaller text size */
+    }
+
+    .text-subtitle, .text-point {
+        font-size: 14px; /* Smaller text for body content */
+    }
+}
+
+
+
+.scroll-top {
+    background: #54BF9F;
+    border: 0;
+    border-radius: 50%;
+    bottom: 0;
+    cursor: pointer;
+    height: 50px;
+    margin: 15px;
+    opacity: 0.75;
+    position: fixed;
+    right: -70px;
+    transition: right 0.2s ease-in-out;
+    width: 50px;
+    z-index: 99;
+  }
+  .scroll-top.visible {
+    right: 0;
+  }
+  
+  .arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    margin-top: 5px;
+    padding: 4px;
+  }
+  .arrow.up {  
+    transform: rotate(-135deg);
+  }
+  
